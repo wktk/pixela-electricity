@@ -39,6 +39,18 @@ bundle exec ruby app.rb --before 2018/12/31
 bundle exec ruby app.rb --after 2018/01/01 --before 2018/12/31
 ```
 
+## deployment to heroku
+
+```sh
+heroku create --buildpack https://github.com/bundler/heroku-buildpack-bundler2.git
+heroku buildpacks:add https://github.com/heroku/heroku-buildpack-chromedriver.git
+heroku buildpacks:add https://github.com/heroku/heroku-buildpack-google-chrome.git
+heroku addons:add scheduler:standard
+heroku config:set $(cat .rbenv-vars)
+git push heroku master
+heroku addons:open scheduler # configure `bundle exec ruby app.rb`
+```
+
 ## lisence
 
 MIT
