@@ -16,7 +16,7 @@ cd pixela-electricity
 
 # install dependencies
 bundle install
-brew install geckodriver
+brew cask install chromedriver
 
 # configure environmental variables
 cp .rbenv-vars.example .rbenv-vars

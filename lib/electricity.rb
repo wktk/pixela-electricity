@@ -8,7 +8,7 @@ class Electricity
   attr_accessor :driver, :wait
 
   def initialize(**options)
-    @driver = options[:driver] || Selenium::WebDriver.for(:firefox)
+    @driver = options[:driver] || Selenium::WebDriver.for(:chrome)
     @wait = options[:wait] || Selenium::WebDriver::Wait.new(timeout: options[:timeout] || 10)
   end
 
