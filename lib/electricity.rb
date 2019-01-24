@@ -38,6 +38,7 @@ class Electricity
   def wait_for
     subject = nil
     wait.until { (subject = yield).displayed? }
+    sleep(1.2) # FIXME: wait animations to complete
     subject
   end
 
