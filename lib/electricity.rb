@@ -42,9 +42,9 @@ class Electricity
   end
 
   def navigate_to_records
-    return if driver.find_elements(:xpath, '//h1[contains(text(), "電力使用量・ご請求")]').size.nonzero?
-    wait_for { driver.find_element(:xpath, '//*[contains(text(), "電力使用量")]') }.click
-    wait_for { driver.find_element(:xpath, '//*[contains(text(), "電力使用量を見る")]') }.click
+    return if driver.current_url.include?('ReferenceCrrspndDetailsPrtlServlet')
+    wait_for { driver.find_element(:xpath, '//a[@href="SelectDetailsBillPPrtlServlet"]') }.click
+    wait_for { driver.find_element(:id, 'submitReferenceCrrspndDetailsPrtl') }.click
   end
 
   def specify_date_until(date)
