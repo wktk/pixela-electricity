@@ -2,6 +2,10 @@
 
 syncronize electricity usage from econo-crea to [pixela](https://pixe.la)
 
+## sample
+
+https://pixe.la/v1/users/wktk/graphs/electricity.html
+
 ## setting up
 
 ```sh
