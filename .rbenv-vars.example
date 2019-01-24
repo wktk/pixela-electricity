@@ -1,0 +1,6 @@
+ELECTRICITY_LOGIN_URL=https://xxxxx.econo-crea.com/absClientB2C/?brandCode=xxxxx&prtCd=xxxxx
+ELECTRICITY_LOGIN_ID=xxxxx@example.com
+ELECTRICITY_PASSWORD=xxxxx
+PIXELA_USERNAME=xxxxx
+PIXELA_TOKEN=xxxxx
+PIXELA_GRAPH_ID=xxxxx
