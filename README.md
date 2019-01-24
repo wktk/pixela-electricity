@@ -5,6 +5,11 @@ syncronize electricity usage from econo-crea to [pixela](https://pixe.la)
 ## setting up
 
 ```sh
+# create graph
+curl -X POST https://pixe.la/v1/users/<USER>/graphs -H 'x-user-token: <token>' \
+  -d '{"id": "electricity", "name": "electricity", "unit": "kWh",
+    "type": "float", "color": "ichou", "timezone": "Asia/Tokyo"}'
+
 # clone source code
 git clone git@github.com:wktk/pixela-electricity.git
 cd pixela-electricity
