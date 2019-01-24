@@ -25,5 +25,3 @@ pixela = Pixela::Client.new(
 electricity.records(params).each do |date, kwh|
   pixela.update_pixel(graph_id: ENV['PIXELA_GRAPH_ID'], date: Date.parse(date), quantity: kwh)
 end
-
-electricity.quit
