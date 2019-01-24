@@ -9,7 +9,8 @@ class Electricity
 
   def initialize(**options)
     @driver = options[:driver] || Selenium::WebDriver.for(:chrome)
-    @wait = options[:wait] || Selenium::WebDriver::Wait.new(timeout: options[:timeout] || 10)
+    driver.manage.timeouts.implicit_wait = options[:timeout] || 10
+    @wait = Selenium::WebDriver::Wait.new(timeout: options[:timeout] || 10)
   end
 
   def login(url, id, password)
@@ -33,6 +34,7 @@ class Electricity
 
   private
 
+  # needed to wait for animation
   def wait_for
     subject = nil
     wait.until { (subject = yield).displayed? }
