@@ -59,7 +59,7 @@ class Electricity
   def parse_records
     wait_for { driver.find_element(:id, 'EntryInputForm_entryModel_svcStrtDt') }
     driver.execute_script('return barChart.datasets[0]["bars"]').map do |bar|
-      [bar['label'], bar['value'].to_f]
+      [bar['label'], bar['value'].to_f.nonzero?]
     end.to_h
   end
 end
